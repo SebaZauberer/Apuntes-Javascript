@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <button onclick="evento()">Ejecutar evento</button>
+   
+   <form action="get">
+       <input type="text" id="objDemo">
+   </form>
+   
+    <script>
+        
+        //la funcion que ejecuta el addEventListener puede usar un parametro para recoger las propiedades del objeto correspondiente a dicho evento
+        function evento(arg){
+            console.log("Evento disparado");
+            console.info(arg);
+            console.warn(arg.path[1]);
+            console.warn(arg.key, arg.keyCode);
+        }
+        
+        var objeto = document.getElementById("objDemo");
+        
+        //para ejecutar un evento se una la fn addEventListener("evento", funcion)
+        objeto.addEventListener("kegypress", evento);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var Seba = new Persona();
+
+        function Persona() {
+            this.nombre = "Sebastián";
+            this.apellido = "Mendoza";
+            this.edad = 30;
+            
+            this.imprimirPersona = function(){
+                return this.nombre + " " + this.apellido+"("+this.edad+")";
+            }
+        }
+
+
+        console.log(Seba);
+        console.log(Seba.nombre);
+        console.log(Seba.imprimirPersona());
+    </script>
+
+</body>
+
+
+</html>

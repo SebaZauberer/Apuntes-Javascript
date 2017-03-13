@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //los parametros de por si son variables anonimas
+        function imprimir( nombre, apellido ){
+            
+            apellido = apellido || "xxx";
+            
+            console.log(nombre +" "+ apellido);
+        }
+        
+        imprimir( "Sebastian" );
+        
+        
+        
+        //objeto anonimo como parametro
+        function imprimir2(persona){
+            console.log(persona.nombre +" "+ persona.apellido);
+        }
+        
+        imprimir2({
+            nombre: "Juan",
+            apellido: "Machuca"
+        });
+        
+        /*
+        es lo mismo que escribir:
+        
+        var objeto = {
+            nombre: "Juan",
+            apellido: "Machuca"
+        }
+        
+        imprimir2(objeto);
+        */
+        
+        
+        //funcion anonima como parametro
+        function imprimir3(fn){
+            fn();
+        }
+        
+        imprimir3( function(){
+            console.log("Función anónima");
+        });
+        
+        /*
+        es lo mismo que escribir:
+        
+        var miFuncion = function(){
+            console.log("Mi función");
+        }
+        
+        imprimir3( miFuncion );
+        */
+        
+    </script>
+    
+</body>
+</html>

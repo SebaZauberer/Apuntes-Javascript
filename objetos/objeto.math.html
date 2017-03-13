@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var PI = Math.PI;
+        console.log(PI);
+        
+        var num = 15.68564554;
+        
+        console.info(num);
+        console.log(Math.round(num));//redondea un numero decimal
+        
+        console.log(Math.round(num * 100) / 100); //funcion para elegir la cantidad de decimales, segun la cantidad de ceros
+        
+        console.log(Math.floor(num)); //devuelve el numero entero del numero decimal actual
+        
+        //funcion para obtener un numero random
+        function randomEntre(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        console.log(randomEntre(500, 1000));
+        
+        console.log(Math.sqrt(25)); //funcion para sacar la raiz cuadrada
+        
+        console.log(Math.pow(5, 2)); //function para calcular un numero en potencia
+        
+    </script>
+</body>
+</html>

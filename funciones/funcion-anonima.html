@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //las funciones anonimas sirven para encapsular la informacion (variables), para que esta no se modifique como un dato global
+        
+        //Ejemplo 1
+        (function(){
+            
+            var a = 10;
+            
+            console.log(a);
+            
+            a = function(){
+                a = 20;
+                return a;
+            }();
+            
+            console.log(a);
+            
+        })();
+        
+        //Ejemplo 2
+        function ejecutarFuncion( fn ){
+            if(fn() === 1){
+                return true
+            }else{
+                return false;
+            }
+        };
+        
+        console.log(
+            
+            ejecutarFuncion(function(){
+                console.log("Función anónima ejecutada!");
+                return 1;
+            })
+            
+        );
+        
+    </script>
+    
+</body>
+</html>

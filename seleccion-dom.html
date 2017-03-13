@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .reset {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            border: 10px solid #000;
+        }
+        
+        .mi-clase {
+            padding: 10px;
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
+            color: #fff;
+        }
+        
+        .mi-clase-2b {
+            border: 3px solid #16b5ff;
+            padding: 20px;
+        }
+        
+        .encabezado {
+            background-color: #ff0;
+        }
+        
+        p {
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1></h1>
+    <div id="mi-div"></div>
+    <section class="mi-clase-2a">
+        <article class="mi-clase-2a"></article>
+    </section>
+</body>
+
+</html>
+<script>
+    /*
+        Glosario
+        
+        .classList.add() agrega una clase a la lista de clases de un elemento
+        .innerHTML modifica el contenido de un elemento por el valor de este (se comporta como una variable)
+        .className modifica la lista de clases de un elemento y agrega una nueva
+        .id agrega un id un elemento
+        .createTextNode crea un texto virtual como un nodo
+        .appendChild() agrega un elemento al como el ultimo hijo de un padre
+        
+        */
+
+    //.getElementById() selecciona un elemento con un id especifico
+        var div = document.getElementById("mi-div");
+
+        div.classList.add("mi-clase");
+        div.innerHTML = "Esto es un div";
+
+    //.getElementsByClassName() selecciona todos los elementos con una clase especifica y devuelve un array[]
+        var div2 = document.getElementsByClassName("mi-clase-2a");
+
+        div2[0].id = "cabecera";
+
+        for (var i = 0; i < div2.length; i++) {
+            div2[i].classList.add('mi-clase-2b');
+            //si innerHTML tiene '+=' este agregarael contenido nuevo al final del contenido propio del elemento
+            div2[i].innerHTML += '<p class="parrafo"></p>';
+        }
+
+    //.getElementsByTagName() selecciona todos los elementos con una etiqueta especifica y devuelve un array[]
+        var div3 = document.getElementsByTagName("p");
+
+        for (var e = 0; e < div3.length; e++) {
+            div3[e].innerHTML = "Esto es un parrafo";
+        }
+
+    //.querySelector() permite seleccionar un elemento con selectores de css (si hay mas de un elemento que coincide con el parametro, toma el primero que encuentre)
+        var div4 = document.querySelector("body > h1");
+
+        div4.className = "encabezado";
+        
+        var texto = document.createTextNode("¡Hola Mundo!");
+        div4.appendChild(texto);
+
+    //.querySelectorAll() permite seleccionar elementos con selectores de css y devuelve un array[] con todos ellos
+        var div5 = document.querySelectorAll("p.parrafo");
+
+        for (var u = 0; u < div5.length; u++) {
+            div5[u].style.color = "blueviolet";
+        }
+
+    //funcion para imitar al selector de JQuery
+        function $(selector) {
+            return document.querySelector(selector);
+        }
+
+        $('body').style.fontFamily = 'sans-serif';
+        $("body").className = "reset";
+</script>

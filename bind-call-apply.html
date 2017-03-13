@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var carro = {
+            color: "Blanco",
+            marca: "Mazda",
+            imprimir: function(){
+                var salida = this.marca + " - " + this.color;
+                return salida;
+            }
+        }
+        
+        var carro2 = {
+            color: "Rojo",
+            marca: "Toyota"
+        }
+        
+        console.log( carro.imprimir() );
+        
+        var logCarro = function(arg1, arg2){
+            console.log("Carro: ", this.imprimir());
+            console.log("Argumentos: ", arg1, arg2);
+            console.log("========================");
+        }
+        
+        //redirecciona la funcion al objeto como parametro (no invocaca la funcion como tal, solo el metodo)
+        var logModeloCarro = logCarro.bind(carro);
+        
+        logModeloCarro("poto y", "xyz");
+        
+        //redirecciona la funcion al objeto como parametro y ejecuta la funcion con parametros especificos
+        logModeloCarro.call(carro, "123", "456");
+        
+        //redirecciona la funcion al objeto como parametro y ejecuta la funcion pero con varios parametros dentro de un array
+        logModeloCarro.apply(carro, ["abc", "din"]);
+        
+        //funciones prestadas
+        console.log( carro.imprimir.call( carro2 ) );
+        
+    </script>
+</body>
+</html>

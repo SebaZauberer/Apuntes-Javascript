@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //para las definiciones del objeto JSON el uso de comillas dobles es obligatorio
+        function Persona(){
+            this.nombre= "Sebastian";
+            this.edad= 25;
+        }
+        Object.prototype.altura = function(alt){
+            console.log("La altura es", alt);
+        }
+        
+        var objetoJS = new Persona();
+        
+        console.log("Objeto literal", objetoJS);
+        
+        //JSON.stringify toma todo lo que puede transformar en string y lo convierte en un codigo JSON (no incluye funciones)
+        var jsonString = JSON.stringify(objetoJS);
+        
+        console.log(jsonString);
+        
+        var objetoDesdeJson = JSON.parse(jsonString);
+        console.log(objetoDesdeJson);
+        
+        
+        console.log(objetoDesdeJson.nombre);
+        
+    </script>
+</body>
+</html>

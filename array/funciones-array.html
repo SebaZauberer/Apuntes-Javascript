@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //arreglo comun
+        var arr = [5,4,3,2,1];
+        console.log(arr);
+        
+        //array[posicion]
+        console.log(arr[0], arr[4], arr[5]);
+        
+        //fn para revertir un array
+        arr.reverse();
+        console.log(arr);
+        
+        //fn que ejecuta una funcion en cada uno de los elementos del array
+        arr = arr.map(function(elem){
+            elem *= elem;
+            return elem;
+        });
+        console.log(arr);
+        
+        //aca esta sacando la raiz cuadrada de cada elemento
+        arr = arr.map(Math.sqrt);
+        console.log(arr);
+        
+        //fn que combierte el array en un string y separa los elementos segun el parametro
+        arr = arr.join("|");
+        console.log(arr);
+        
+        //fn que genera un string con la representacion textual de un array (similar a join())
+        console.log(arr.toString());
+        
+        //fn que genera un array y separa los elementos segun el parametro
+        arr = arr.split("|");
+        console.log(arr);
+        
+        //fn para agregar un elemento al final del array
+        arr.push("6");
+        console.log(arr);
+        
+        //fn para agregar un elemento al principio del array
+        arr.unshift("0");
+        console.log(arr);
+        
+        //fn que elimina el ultimo elemento del array y que retorna el valor de dicho elemento
+        var elimine =  arr.pop();
+        console.log(arr, elimine);
+        
+        //fn que elimina o reemplaza un elemento del array fn(posicion, cantidad elementos a borrar, reemplazar por)
+        arr.splice(1, 1, "10");
+        console.log(arr);
+        
+        //fn que que corta del array fn(cortar desde, cortar hastas)
+        arr = arr.slice(0, 2);
+        console.log(arr);
+        
+        //fn que devuelve el largo del array
+        console.log(arr.length);
+        
+    </script>
+    
+</body>
+</html>

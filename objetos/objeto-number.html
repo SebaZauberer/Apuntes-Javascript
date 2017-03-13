@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //metodos para variables con numeros
+        //NaN = not a number (no es un numero)
+        
+        var num = 10.785493;
+        
+        //toFixed() fn para cortar el largo de una cifra dependiendo de la cantidad del parametro
+        console.log( num.toFixed(5) );
+        
+        //toString() fn para convertir una variable numerica en una cadena de texto
+        var a = 12345+67989;
+        a = a.toString();
+        console.log(a);
+        console.info(typeof a);
+        
+        //toPrecision fn para redondear una cifra dependiendo de la cantidad del parametro
+        console.log( num.toPrecision(4) );
+        
+        //valueOf() fn para obtener el valor numerico primitivo de un objeto numerico
+        var numObjt = new Number("50");
+        console.log(numObjt);
+        console.log( numObjt.valueOf() );
+    
+    </script>
+</body>
+</html>

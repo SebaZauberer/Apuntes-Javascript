@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        //las expresiones regulares son key sentitive
+        
+        var reg1 = RegExp("a");
+        var reg2 = /a/;
+        
+        var texto = "Hola Mundo, 12345.";
+        
+        //fn match() para encontrar una expresion regular en un estring y devuelve un array con el primer resultado que encuantra
+        var arr = texto.match(/a/);
+        console.log(arr[0]);
+        
+        // /^a/ busca donde comienza algo con la letra "a"
+        var arr = texto.match(/^H/);
+        
+        // /a$/ busca donde termina algo con la letra "a"
+        var arr = texto.match(/o$/);
+        
+        // /.../ los primeros 3 caracteres que encuentre
+        var arr = texto.match(/.../);
+        
+        // /^.a/ algo que comience con cualquier caracter seguido de "a"
+        var arr = texto.match(/^.o/);
+        
+        // [] rango de numero
+        var arr = texto.match([0-9]);
+        
+        // [] rango de letra (minuscula)
+        var arr = texto.match([a-z]);
+        
+        //
+        var arr = texto.match(/^H[aeiou]/);
+        
+        //i = insensible
+        //g = todas las apariciones
+        //m = multilinia
+        
+    </script>
+</body>
+</html>

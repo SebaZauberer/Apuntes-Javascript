@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        var hoy = new Date(); //fecha de hoy
+        var fMilisegundo = new Date(0);
+        var fechaFija = new Date(2017, 0, 23, 21, 35, 16, 1); //formato de fecha fija
+        
+        console.info(hoy);
+        console.log(fMilisegundo);
+        console.log(fechaFija);
+        
+        console.log( hoy.getFullYear() ); //retorna el año
+        console.log( hoy.getMonth() ); //retorna el mes
+        console.log( hoy.getDate() ); //retorna el día del mes
+        console.log( hoy.getDay() ); //retorna el día de la semana (numerico (domingo == 0))
+        console.log( hoy.getHours() ); //retorna la hora
+        console.log( hoy.getMinutes() ); //retorna los minutos
+        console.log( hoy.getSeconds() ); //retorna los segundos
+        console.log( hoy.getMilliseconds() ); //retorna los milisegundos
+        
+        console.log( hoy.getTime() ); //retorna el valor de la fecha en un numero entero
+        
+        //truco para generar un cronometro
+        var inicio = new Date();
+        
+        for (i = 0; i < 100; i++){
+            console.log("Cargando...");
+        }
+        
+        var fin = new Date();
+        
+        var duracion = fin.getTime() - inicio.getTime();
+        console.log( duracion, "milisegundos" );
+        console.log( (duracion / 1000), "segundos" );
+    
+    </script>
+</body>
+</html>

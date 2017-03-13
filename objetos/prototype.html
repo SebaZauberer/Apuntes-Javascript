@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function Persona(){
+            this.nombre = "Sebastián";
+            this.apellido = "Olate";
+            this.edad = 24;
+            this.pais = "Chile";
+        }
+        
+        //"prototype" sirve para guardar metodos de objetos en una memoria reservada para que no se repita muchas veces (generalmente se ocupa con los metodos dentro de clases)
+        Persona.prototype.imprimirInfo = function(){
+            console.log(this.nombre+" "+this.apellido+"("+this.edad+"), "+this.pais+".");
+        }
+        
+        var seba = new Persona(); 
+        
+        console.log(seba);
+        console.log(seba.imprimirInfo());
+        
+    </script>
+</body>
+</html>

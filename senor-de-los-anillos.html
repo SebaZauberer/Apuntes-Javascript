@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Señor de los anillos en consola</title>
+</head>
+
+<body>
+
+    <script>
+        function Jugador(nombre) {
+            this.nombre = nombre;
+            this.pv = 100;
+            this.pm = 100;
+            this.sta = 100;
+
+            this.estado = function () {
+                if (this.pv <= 0) {
+                    this.pv = 0;
+                    console.error(this.nombre + " esta muerto");
+                }
+                if (this.pm <= 0) {
+                    this.pm = 0;
+                    console.error("Falta maná");
+                }
+                if (this.sta <= 0) {
+                    this.sta = 0;
+                    console.error("Falta energía");
+                }
+
+                console.log(this);
+            }
+
+            this.pocion = function () {
+                if (this.pv < 100 && this.pv > 0) {
+                    var vida = this.pv;
+                    
+                    for(i=1;i <= 4; i++){
+                        this.pv += 10;
+                        
+                        console.warn("Recuperar vida +10pv");
+                    }
+                    
+                    console.warn("Vida de "+this.nombre+" "+this.pv+"pv");
+                }
+            }
+        }
+
+        var aragon = new Jugador("Aragon");
+
+        aragon.espadazo = function (enemigo) {
+            var dano = 30;
+            enemigo.pv -= dano;
+            this.sta -= 40;
+            
+            enemigo.estado();
+            this.estado();
+        };
+
+
+        var saruman = new Jugador("Saruman");
+        
+        saruman.bolaFuego = function (enemigo){
+            var dano = 40;
+            enemigo.pv -= dano;
+            this.pm -= 50;
+            
+            enemigo.estado();
+            this.estado();
+        }
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var fecha = new Date(2017, 0, 29);
+        
+        //se agrega un metodo al objeto Date con prototype para hacer operaciones
+        
+        Date.prototype.sumarDias = function(dias){
+            this.setDate( this.getDate() + dias );
+            return this;
+        }
+        
+        Date.prototype.sumarAnios = function(anios){
+            this.setFullYear( this.getFullYear() + anios );
+            return this;
+        }
+        
+        console.log(fecha);
+        console.log(fecha.sumarDias(2));
+        console.log(fecha.sumarAnios(-7));
+        
+        
+        //metodo alternativo sin usar el prototype
+        var SumarDias = function(laFecha, losDias){
+            laFecha.setDate( laFecha.getDate() + losDias );
+            return laFecha;
+        }
+        
+    </script>
+</body>
+</html>

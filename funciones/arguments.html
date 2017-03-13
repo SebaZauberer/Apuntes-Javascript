@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //el "arguments" toma especificamente los parametros que se le dan a la funcion y los convierte en un array 
+        function miFuncion(a,b,c,d){
+            
+            if(arguments.length !== 4){
+                console.error("La funcion necesita 4 parametros");
+                return;
+            }
+            
+            //arguments = [];
+            console.log(arguments[3]);
+            
+        };
+        
+        miFuncion(10,20,60,789);        
+        
+    </script>
+</body>
+</html>

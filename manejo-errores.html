@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        try{
+            throw new Error('Nombre error');
+        }
+        catch(e){
+            console.error(e);
+        }
+        finally{
+            console.log('Finalmente');
+        }
+        
+        function registroError(e){
+            var ahora = new Date();
+            
+            console.log('Se registro un error: ', e, ', a las: ', ahora.getTime());
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //setTimeout ejecuta un codigo despues de un tiempo segun el parametro
+        setTimeout(function(){
+            
+            console.log("Pasó un segundo");
+            
+        }, 1000);
+        
+        //setTimeout dentro de objetos
+        var seba = {
+           nombre: "Seba",
+           edad: 25,
+            imprimir: function(){
+                
+                var self = this;
+                setTimeout(function(){
+                    console.log(self);
+                    console.log(self.nombre, self.edad);
+                }, 1000);
+                
+            }
+        };
+        
+        seba.imprimir();
+        
+        //setInterval ejecuta un codigo cada cierto tiempo segun el parametro
+        var segundos = 0;
+        
+        var intervalo = setInterval(function(){
+            
+            segundos++;
+            
+            console.log("seg", segundos);
+            
+            if(segundos === 5){
+                //clearInterval sirve para parar el ciclo de tiempo
+                clearInterval(intervalo);
+            }
+            
+        }, 1000);
+        
+    </script>
+</body>
+</html>

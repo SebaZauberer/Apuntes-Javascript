@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //la sobrecarga de operadores es cuando vas agregando varios operadores en diferentes funciones y se les asigna un valor predefinido
+        function crearProducto(nombre, precio){
+            
+            //en variables, el signo "||" sirve para asignar un valor predeterminado (parametro || valor mpredeterminado)
+            nombre = nombre || "sin nombre";
+            precio = precio || 0;
+            
+            console.log("Producto: ", nombre, "- Precio: ", precio);
+            
+        }
+        
+        function crearProducto100( nombre ){
+            crearProducto(nombre, 100);
+        }
+        
+        function crearProductolapiz( precio ){
+            crearProducto("Lapiz", precio);
+        }
+        
+        crearProducto();
+        crearProducto100("Jugo");
+        crearProductolapiz( 300 );
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //trata sobre bomprobar el tipo de dato de algo
+        function determinaDato( parametro ){
+            
+            if(parametro === undefined){
+                
+                console.warn("El parametro es undefined... no sé que hacer");
+                
+            } else if(typeof parametro === "number"){
+                
+                console.log("El parametro es un número");
+                
+            } else if(typeof parametro === "string"){
+                
+                console.log("El parametro es una cadena de texto");
+                
+            } else if(typeof parametro === "object"){
+                
+                console.log("El parametro es un objeto simple...");
+                
+                if(parametro instanceof Number){
+                    
+                    console.info("El parametro es un objeto numerico");
+                    
+                }
+            }
+        }
+        
+        var b = new Number(3);
+        
+        console.log( b );
+        
+        determinaDato();
+        
+    </script>
+</body>
+</html>

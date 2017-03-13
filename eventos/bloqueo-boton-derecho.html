@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+    </style>
+    <script>
+        
+        document.onmousedown = function(arg){
+            if(arg.button === 2){
+                alert("Click bloquedo");
+                return;
+            }
+        }
+        
+        document.onmouseup = function(){
+            var textoSeleccionado = window.getSelection().toString();
+            
+            console.log(textoSeleccionado);
+        }
+        
+    </script>
+</head>
+<body oncontextmenu="return false">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta at voluptate atque veritatis sint, nesciunt quisquam, perspiciatis natus quasi facere blanditiis labore et sequi. Doloremque ullam recusandae nulla facere vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex voluptate iusto dignissimos unde dolores obcaecati omnis beatae perferendis odio nesciunt aperiam quod, doloribus, quibusdam explicabo repellendus. Neque, dolores, quidem!</p>
+</body>
+</html>

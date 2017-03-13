@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //retorna un numero
+        function obtenerAleatorio(){
+            return Math.random();
+        }
+        
+        //retorna una cadena de texto
+        function obtenerNombre(){
+            return "Juan";
+        }
+        
+        console.log(obtenerNombre());
+        
+        //retorna un valor booleano
+        function esMayor05(){
+            if( obtenerAleatorio() > 0.5 ){
+                return true;
+            }else{
+                return false;
+            }
+        }
+            
+        if(esMayor05()){
+            console.log("Es mayor a 0.5");
+        }else{
+            console.log("Es menor a 0.5");
+        }
+        
+        //retorna un objeto
+        function crearPersona(nombre, apellido){
+            return {
+                nombre: nombre,
+                apellido: apellido
+            }
+        }
+        
+        var persona = crearPersona("María","la del barrio");
+        console.log(persona.nombre);
+        console.log(persona.apellido);
+        
+        
+        //retorna una función
+        function creaFuncion(){
+            return function(nombre){
+                console.log("Me creo "+ nombre);
+            }
+        }
+        
+        var nuevaFuncion = creaFuncion();
+        
+        nuevaFuncion(persona.apellido);
+        
+    </script>
+    
+</body>
+</html>

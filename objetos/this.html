@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //el objeto This toma el valor del contexto anterior (objeto global window, objetos, funciones, metodos)
+
+        var persona = {
+            nombre: "Aquiles",
+            apellido: "Vaesa",
+            imprimirNombre: function () {
+                console.log(this.nombre + " " + this.apellido);
+            },
+            direccion: {
+                pais: "Chile",
+                obtenerPais: function () {
+                    var self = this;
+
+                    var nuevaDireccion = function () {
+                        console.log(self);
+                        console.info("La dirección es en " + self.pais);
+                    }
+                    
+                    nuevaDireccion();
+                }
+            }
+        };
+        
+        persona.imprimirNombre();
+        persona.direccion.obtenerPais();
+    </script>
+
+</body>
+
+</html>

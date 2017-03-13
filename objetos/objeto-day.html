@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        var hoy = new Date();
+        var fMilisegundo = new Date(0);
+        var fechaFija = new Date(2017, 0, 23, 21, 35, 16, 1);
+        
+        console.info(hoy);
+        console.log(fMilisegundo);
+        console.log(fechaFija);
+        
+        console.log( hoy.getFullYear() );
+        console.log( hoy.getMonth() );
+        console.log( hoy.getHours() );
+        console.log( hoy.getMinutes() );
+        console.log( hoy.getSeconds() );
+        console.log( hoy.getMilliseconds() );
+        
+        console.log( hoy.getTime() );
+        
+        var inicio = new Date();
+        
+        for (i = 0; i < 10000; i++){
+            console.log("Cargando...");
+        }
+        
+        var fin = new Date();
+        
+        var duracion = fin.getTime() - inicio.getTime();
+        console.log( duracion, "milisegundos" );
+        console.log( (duracion / 1000), "segundos" );
+    
+    </script>
+</body>
+</html>

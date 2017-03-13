@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Operadores de comparacion:
+        
+        ==   igual a
+        ===  igual a (entre tipo de datos y objetos)
+        !=   no es igual a
+        <    menor que
+        >    mayor que
+        <=   menor o igual a
+        >=   mayor o igual a
+        
+        Para mas condiciones dentro del mismo parametro
+        &&   y (ambas condiciones deben ser ciertas)
+        ||   o (una condicion debe ser cierta)
+        
+        */
+        
+        var nota = 5.5;
+
+        if (nota >= 7) {
+            console.info("Excelente");
+        } else if (nota < 7 && nota >= 5 ) {
+            console.log("Buena");
+        } else if(nota == 4){
+            console.warn("Regular");
+            confirm("A punto de reprobar, ¿Deseas continuar?");
+        } else {
+            console.error("Mala");
+            alert("Reprobado");
+        }
+        
+        /*
+        Modo abreviado para escribir una condicional rapida (ejecuta solo 2 resultados si o no)
+         ? si es cierto
+         : si no entonces
+         
+        var c = (a < b)? "cierto" : "falso";
+        
+        */
+        
+        var a = 10;
+        var b = 20;
+        
+        var c = (a > b)?
+            function(){
+                console.log("A es mayor a B");
+                return a;
+            }
+            : 
+            function(){
+                console.log("B es mayor a A");
+                return b;
+            };
+        
+        // a la variable "c" se le asigna una funcion como resultado de analizar si es cierta la condicion
+        
+        c();
+        
+        //parar comparar si tiene valor o no de forma rapida
+        
+        var d = undefined;
+        var e = 20;
+        
+        var f = d || e ;
+        
+        console.log(f);
+        
+        //esto ultimo se puede usar como valor por defecto
+        function getNombre( nombre ){
+            
+            var nomb = nombre || undefined || "<sin nombre>";
+            console.log( nomb );
+            
+        }
+        
+        getNombre();
+        
+    </script>
+</body>
+
+</html>

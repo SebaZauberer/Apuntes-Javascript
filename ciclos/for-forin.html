@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for(variableIndice; evaluacion; modificafor variableIndice)
+        
+        for(var i = 0; i <= 10; i+=2){
+            
+            //dentro del bucle for(){} la variableIndice se puede ocupar como un numero
+            
+            if(i == 6){
+                continue;
+            }
+            
+            console.log( i )
+            
+        };
+        
+        //==============================
+        
+        var Persona = function(){
+            this.nombre = "Sebastian";
+            this.apellido = "Olate";
+            this.edad = 25;
+        };
+        
+        Persona.prototype.pais = "Chile";
+        
+        var seba = new Persona();
+        
+        //Reflejo (for( in )) permite conocer las propiedades de los objetos
+        for( propiedad in seba ){
+            
+            if(!seba.hasOwnProperty(propiedad)){
+                continue;
+            }
+            
+            console.log( propiedad+":", seba[propiedad]);
+            
+        }
+        
+        //for in para arrays
+        var arr = [1,2,3,"Hola",5,true,undefined,null];
+        
+        //al imprimir el primer parametro del for-in se obtiene la pocicion de los elementos en un array
+        for(posicion in arr){
+            console.log(posicion);
+        }
+        
+        arr.forEach(function(valor){
+            console.log(valor);
+        });
+        
+    </script>
+</body>
+</html>

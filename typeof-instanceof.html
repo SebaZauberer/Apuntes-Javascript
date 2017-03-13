@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        function identifica(parametro){
+            
+            //typeof es una funcion que sirve para retornar el tipo de valor de algo
+            console.log( typeof parametro );
+            
+            //instanceof es una funcion que sirve para comparar algo con un objeto y retorna true o false
+            console.log(parametro instanceof Persona);
+        }
+        
+        function Persona(){
+            this.nombre = "Seba";
+            this.edad = 24;
+        }
+        
+        var elSeba = new Persona;
+        
+        identifica( elSeba );
+        
+    </script>
+    
+</body>
+</html>

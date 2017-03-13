@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        li.active {
+            color: tomato;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Metodos para aplicar la clase "active" en un menu</h1>
+    <ul class="nav">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ul>
+    <script>
+        //Metodo de agregar la clase ".active" con Javascript
+        var selector, elems, makeActive;
+        
+        selector = '.nav li';
+        elems = document.querySelectorAll(selector);
+        makeActive = function () {
+            for (var i = 0; i < elems.length; i++){
+                elems[i].classList.remove('active');
+            }
+            this.classList.add('active');
+        };
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('mouseover', makeActive);
+        }
+        
+        //Metodo de agregar la clase ".active" con JQuery
+        var selector = '.nav li';
+        
+        $(selector).on('mouseover', function () {
+            $(selector).removeClass('active');
+            $(this).addClass('active');
+        });
+        
+        //Metodo por J. Makeney para que al seleccionar al hijo de un menu, el padre de este quede con el estado "hover" y se le agregue la clase "active-mdd"
+        $(document).ready(function () {
+            $(".nav-uno li").children("ul").mouseover(function () {
+                $(this).parent().trigger("mouseover");
+                $(this).parent().addClass("active-mdd");
+            });
+            $(".nav-uno li").children("ul").mouseleave(function () {
+                $(this).parent().removeClass("active-mdd");
+            });
+        });
+        
+        //Metodo por S. Elgueta para darle foco a una columna de una tabla
+        $(document).ready(function () {
+            $(document).on('click', '.tabla td', function (i, item) {
+                // console.log($(this).closest('tr').find('td:eq(0)').html());
+                // find() busca todos los elementos hijo que coincidan con su parametro
+                // each() ejecuta una funcion aca cada elemento seleccionado de algo
+                $('.tabla').find('tr').each(function (i, item) {
+                    $(this).css('color', 'black');
+                });
+                //closest() slecciona el primer padre que encuentre (si se usa como parametro al mismo elemento seleccionadose autoseleccionara)
+                $(this).closest('tr').css('color', 'red');
+            });
+        });
+    </script>
+</body>
+
+</html>
